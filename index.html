@@ -4,13 +4,18 @@
     <style>
         
         body{
-            background-image: url("");
-             background-repeat: repeat;
+            background-image: url("/Background.png");
+            background-size: cover;
             background-color: #cccccc;
         }
         
         .logo{
             margin: 50px;
+        }
+        
+        .img-logo{
+            border-radius: 66%;
+            width: 65px;
         }
         
         .container{
@@ -21,6 +26,7 @@
         .reloj-container{
             overflow: auto;
             text-align: center;
+            display: inline-block;
         }
         .reloj{
             float: left;
@@ -62,13 +68,17 @@
             border-radius: 50%;
         }
         
+        .redes-sociales-container{
+            text-align: center;
+        }
+        
     </style>
 </head>
     
 <body>
     <div class="logo">
         <a href="#">
-            <img src="" alt="LOGO">
+            <img class="img-logo" src="/LogoCoderBloom.png" alt="LOGO">
         </a>
     </div>
     <div class="container"> 
@@ -91,24 +101,24 @@
                 <p class="name">Segundos</p>
             </div>
          </div>
-        <h3 class="concurso">Para nuestro siguiente concurso</h3>
+        <h3 class="concurso">Para nuestro siguiente concurso de programación</h3>
     </div>
     
-    <div class="">
-        <a href="#" class="red-social">
-            <img src="" alt="Facebook">
+    <div class="redes-sociales-container">
+        <a href="https://www.facebook.com/coderbloom" class="red-social">
+            <img src="/facebook.png" alt="Facebook">
         </a>
-        <a href="#" class="red-social">
-             <img src="" alt="Instagram">
+        <a href="https://www.instagram.com/coder.bloom/" class="red-social">
+             <img src="/instagram.png" alt="Instagram">
         </a>
-        <a href="#" class="red-social">
-            <img src="" alt="YouTube"> 
+        <a href="https://www.youtube.com/@coderbloom/" class="red-social">
+            <img src="/youtube.png" alt="YouTube"> 
         </a>
     </div>
     
 <script>
 function actualizarReloj() {
-    var meta = new Date("2023-03-25 08:00");
+    var meta = new Date("2023-02-25 08:00");
     var diff = Math.floor((meta - Date.now())/1000);
     var SEGUNDOS_POR_MINUTO = 60;
     var SEGUNDOS_POR_HORA = 60 * SEGUNDOS_POR_MINUTO;
