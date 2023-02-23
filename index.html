@@ -8,7 +8,7 @@ function actualizarReloj() {
     var reloj = document.getElementById('reloj');
     reloj.innerText = Math.floor(diff / 1000);
 }
-document.onload = function() { setInterval(actualizarReloj, 1000); };
+window.onload = function(e) { setInterval(actualizarReloj, 1000); };
 </script>
 </body>
 </html>
