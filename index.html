@@ -1,0 +1,14 @@
+<html>
+<body>
+<span id="reloj" />
+<script>
+function actualizarReloj() {
+    var meta = new Date("2023-04-01 08:00");
+    var diff = meta - Date.now();
+    var reloj = document.getElementById('reloj');
+    reloj.innerText = Math.floor(diff / 1000);
+}
+document.onload(function() { setInterval(actualizarReloj, 1000); });
+</script>
+</body>
+</html>
