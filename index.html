@@ -4,9 +4,22 @@
 <script>
 function actualizarReloj() {
     var meta = new Date("2023-04-01 08:00");
-    var diff = meta - Date.now();
+    var diff = Math.floor((meta - Date.now())/1000);
+    var SEGUNDOS_POR_MINUTO = 60;
+    var SEGUNDOS_POR_HORA = 60 * SEGUNDOS_POR_MINUTO;
+    var SEGUNDOS_POR_DIA = 24 * SEGUNDOS_POR_HORA;
+    
+    // Obteniendo número de días
+    var dias = Math.floor(diff / SEGUNDOS_POR_DIA);
+    
+    // Obteniendo número de horas
+    var horas = Math.floor(diff % SEGUNDOS_POR_DIA / SEGUNDOS_POR_HORA);
+    
+    // Obteniendo número de minutos
+    var minutos = Math.floor(diff % SEGUNDOS_POR_HORA / SEGUNDOS_POR_MINUTO);
+                             
     var reloj = document.getElementById('reloj');
-    reloj.innerText = Math.floor(diff / 1000);
+    reloj.innerText = `Faltan ${dias} días, ${horas} horas, ${minutos} minutos para nuestro siguiente concurso`                      
 }
 window.onload = function(e) { setInterval(actualizarReloj, 1000); };
 </script>
