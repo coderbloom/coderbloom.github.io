@@ -1,9 +1,114 @@
 <html>
+
+<head>
+    <style>
+        
+        body{
+            background-image: url("");
+             background-repeat: repeat;
+            background-color: #cccccc;
+        }
+        
+        .logo{
+            margin: 50px;
+        }
+        
+        .container{
+            padding-bottom: 120px;
+            text-align: center;
+        }
+        
+        .reloj-container{
+            overflow: auto;
+            text-align: center;
+        }
+        .reloj{
+            float: left;
+            padding: 7px 40px 1px 40;
+        }
+        .num{
+            font-family: PlayfairDisplay-Italic;
+            font-size: 120px;
+            line-height: 1;
+            /* color: #fff; */
+            text-transform: uppercase;
+            margin: 3px;
+        }
+        .name{
+            font-family: PlayfairDisplay-Italic;
+            font-size: 18px;
+            line-height: 1;
+            text-align: center;
+        }
+        
+        .falta{
+            text-align: center;
+            font-family: Math;
+            font-size: 72px;
+            line-height: 1.1;
+        }
+        
+        .concurso{
+            font-family: Math;
+            font-size: 36px;
+            line-height: 1.1;
+        }
+        
+        .red-social{
+            color: #fff;
+            font-size: 18px;
+            border: 1px solid #fff;
+            background-color: transparent;
+            border-radius: 50%;
+        }
+        
+    </style>
+</head>
+    
 <body>
-<span id="reloj" />
+    <div class="logo">
+        <a href="#">
+            <img src="" alt="LOGO">
+        </a>
+    </div>
+    <div class="container"> 
+        <h3 class="falta">FALTAN</h3>
+        <div class="reloj-container">
+            <div class="reloj">
+                <p id="reloj-dias" class="num"> </p>
+                <p class="name">Días </p>
+            </div>
+            <div class="reloj">
+                <p id="reloj-horas" class="num"> </p>
+                <p class="name">Horas </p>
+            </div>
+            <div class="reloj">
+                <p id="reloj-minutos" class="num"></p>
+                <p class="name">Minutos </p>
+            </div>
+            <div class="reloj">
+                <p id="reloj-segundos" class="num"></p>
+                <p class="name">Segundos</p>
+            </div>
+         </div>
+        <h3 class="concurso">Para nuestro siguiente concurso</h3>
+    </div>
+    
+    <div class="">
+        <a href="#" class="red-social">
+            <img src="" alt="Facebook">
+        </a>
+        <a href="#" class="red-social">
+             <img src="" alt="Instagram">
+        </a>
+        <a href="#" class="red-social">
+            <img src="" alt="YouTube"> 
+        </a>
+    </div>
+    
 <script>
 function actualizarReloj() {
-    var meta = new Date("2023-04-01 08:00");
+    var meta = new Date("2023-03-25 08:00");
     var diff = Math.floor((meta - Date.now())/1000);
     var SEGUNDOS_POR_MINUTO = 60;
     var SEGUNDOS_POR_HORA = 60 * SEGUNDOS_POR_MINUTO;
@@ -17,9 +122,19 @@ function actualizarReloj() {
     
     // Obteniendo número de minutos
     var minutos = Math.floor(diff % SEGUNDOS_POR_HORA / SEGUNDOS_POR_MINUTO);
+    
+    //obteniendo número de segundos
+    var segundos = Math.floor(diff % SEGUNDOS_POR_MINUTO);
                              
-    var reloj = document.getElementById('reloj');
-    reloj.innerText = `Faltan ${dias} días, ${horas} horas, ${minutos} minutos para nuestro siguiente concurso`                      
+    var relojd = document.getElementById('reloj-dias');
+    relojd.innerText = `${dias}`
+    var relojh = document.getElementById('reloj-horas');
+    relojh.innerText = `${horas}` 
+    var relojm = document.getElementById('reloj-minutos');
+    relojm.innerText = `${minutos}` 
+    var relojs = document.getElementById('reloj-segundos');
+    relojs.innerText = `${segundos}` 
+    
 }
 window.onload = function(e) { setInterval(actualizarReloj, 1000); };
 </script>
