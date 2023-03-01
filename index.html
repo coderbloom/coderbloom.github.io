@@ -4,7 +4,7 @@
     <style>
         
         body{
-            background-image: url("/Background3.png");
+            background-image: url("Background3.png");
             background-size: cover;
             background-color: #cccccc;
             color: white;
@@ -124,8 +124,8 @@
     
 <script>
 function actualizarReloj() {
-    var meta = new Date("2023-02-25 08:00");
-    var diff = Math.floor((meta - Date.now())/1000);
+    var meta = new Date("2023-04-01 08:00");
+    var diff = Math.max(0, Math.floor((meta - Date.now())/1000));
     var SEGUNDOS_POR_MINUTO = 60;
     var SEGUNDOS_POR_HORA = 60 * SEGUNDOS_POR_MINUTO;
     var SEGUNDOS_POR_DIA = 24 * SEGUNDOS_POR_HORA;
